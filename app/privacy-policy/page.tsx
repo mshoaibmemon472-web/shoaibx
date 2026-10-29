@@ -24,7 +24,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-3">1. Introduction</h2>
             <p>
-              Welcome to <strong>Nexora Digital</strong> ("we", "our", or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains what information we collect, how we use it, and what rights you have in relation to it.
+              Welcome to <strong>SHOAIBX</strong> ("we", "our", or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains what information we collect, how we use it, and what rights you have in relation to it.
             </p>
           </section>
 
@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-3">3. Cookies and Web Beacons</h2>
             <p>
-              Like any other website, Nexora Digital uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.
+              Like any other website, SHOAIBX uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.
             </p>
           </section>
 
@@ -52,14 +52,14 @@ export default function PrivacyPolicy() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-3">5. Amazon Affiliate Disclosure</h2>
             <p>
-              Nexora Digital is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com, Amazon.ae, or other Amazon properties. As an Amazon Associate, we earn from qualifying purchases. This means we may earn a small commission if you buy through links on our site, at no extra cost to you.
+              SHOAIBX is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com, Amazon.ae, or other Amazon properties. As an Amazon Associate, we earn from qualifying purchases. This means we may earn a small commission if you buy through links on our site, at no extra cost to you.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-3">6. Third-Party Privacy Policies</h2>
             <p>
-              Nexora Digital's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.
+              SHOAIBX's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.
             </p>
           </section>
 

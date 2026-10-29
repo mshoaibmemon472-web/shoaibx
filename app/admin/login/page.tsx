@@ -45,7 +45,7 @@ export default function AdminLoginPage() {
               Admin Login
             </span>
           </h1>
-          <p className="text-gray-400 text-sm">Nexora Digital Control Panel</p>
+          <p className="text-gray-400 text-sm">SHOAIBX Control Panel</p>
         </div>
 
         {/* Form */}

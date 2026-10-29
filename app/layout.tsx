@@ -19,11 +19,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Nexora Digital | Premium Books, Blogs & Products",
-    template: "%s | Nexora Digital"
+    default: "SHOAIBX | Premium Books, Blogs & Products",
+    template: "%s | SHOAIBX"
   },
-  description: "Discover premium AI education books, storybooks, and trending e-commerce products. Learn, build, and grow with Nexora Digital by M. Shoaib Memon.",
-  keywords: ["Nexora Digital", "AI books", "story books", "e-commerce", "Amazon products", "M Shoaib Memon", "AI prompts"],
+  description: "Discover premium AI education books, storybooks, and trending e-commerce products. Learn, build, and grow with SHOAIBX by M. Shoaib Memon.",
+  keywords: ["SHOAIBX", "AI books", "story books", "e-commerce", "Amazon products", "M Shoaib Memon", "AI prompts"],
   authors: [{ name: "M. Shoaib Memon" }],
   
   verification: {
@@ -31,10 +31,10 @@ export const metadata: Metadata = {
 },
 
   openGraph: {
-    title: "Nexora Digital | Premium Books & Products",
+    title: "SHOAIBX | Premium Books & Products",
     description: "Discover premium AI education, storybooks, and trending products.",
     url: "https://nexora-digital-8359.vercel.app",
-    siteName: "Nexora Digital",
+    siteName: "SHOAIBX",
     type: "website",
   },
 };

@@ -75,7 +75,7 @@ export default function ContactPage() {
 
         {/* Social Media Icons */}
         <div className="text-center">
-          <p className="text-gray-400 mb-6">Connect with Nexora Digital</p>
+          <p className="text-gray-400 mb-6">Connect with SHOAIBX</p>
           <div className="flex justify-center gap-4">
             <a
               href="https://wa.me/923142325733"

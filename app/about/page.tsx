@@ -23,8 +23,8 @@ export default function AboutPage() {
     },
     {
       year: "The Vision",
-      title: "Nexora Digital",
-      description: "Launched Nexora Digital to share AI-powered products, write stories, and help beginners start their journey.",
+      title: "SHOAIBX",
+      description: "Launched SHOAIBX to share AI-powered products, write stories, and help beginners start their journey.",
     },
   ];
 
@@ -44,7 +44,7 @@ export default function AboutPage() {
               About Me
             </span>
           </h1>
-          <p className="text-gray-400 text-lg">Get to know the person behind Nexora Digital</p>
+          <p className="text-gray-400 text-lg">Get to know the person behind SHOAIBX</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
@@ -64,7 +64,7 @@ export default function AboutPage() {
           {/* Info */}
           <div>
             <h2 className="text-4xl font-bold mb-2 text-white">H.M. Shoaib Memon</h2>
-            <p className="text-purple-400 text-lg mb-6">Founder of Nexora Digital</p>
+            <p className="text-purple-400 text-lg mb-6">Founder of SHOAIBX</p>
             <p className="text-gray-300 leading-relaxed mb-4">
               Hi! I&apos;m <strong className="text-white">Shoaib</strong> — a student, creator, and storyteller 
               with a deep passion for <strong className="text-purple-300">AI creation and development</strong>. 
@@ -73,7 +73,7 @@ export default function AboutPage() {
             <p className="text-gray-300 leading-relaxed mb-4">
               After completing the <strong className="text-cyan-300">Essential AI course</strong>, I realized 
               how powerful AI can be — not just for experts, but for everyone. That&apos;s why I started 
-              <strong className="text-white"> Nexora Digital</strong>.
+              <strong className="text-white"> SHOAIBX</strong>.
             </p>
             <p className="text-gray-300 leading-relaxed">
               My goal is simple: build AI-powered products, write stories that inspire, and help 

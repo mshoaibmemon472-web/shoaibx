@@ -14,7 +14,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              Nexora Digital
+              SHOAIBX
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Premium digital products, AI resources, and stories by M. Shoaib Memon.
@@ -75,7 +75,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8 text-center">
           <p className="text-gray-500 text-sm">
-            © 2026 Nexora Digital. All rights reserved.
+            © 2026 SHOAIBX. All rights reserved.
           </p>
           <p className="text-gray-600 text-xs mt-2">
             Made with 💜 by M. Shoaib Memon

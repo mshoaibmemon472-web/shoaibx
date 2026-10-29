@@ -89,7 +89,7 @@ export default function Home() {
             className="text-6xl md:text-8xl font-bold mb-6 tracking-tight drop-shadow-[0_0_30px_rgba(168,85,247,0.4)]"
           >
             <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-              Nexora Digital
+              SHOAIBX
             </span>
           </motion.h1>
 
@@ -274,7 +274,7 @@ export default function Home() {
 
           <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
             Hi! I&apos;m <strong className="text-white">Shoaib</strong> — a student and creator with a deep passion for 
-            AI and storytelling. I started Nexora Digital to share AI resources and inspire beginners.
+            AI and storytelling. I started SHOAIBX to share AI resources and inspire beginners.
           </p>
           
           <Link href="/about" className="inline-block px-8 py-3 border border-cyan-500/30 rounded-full text-cyan-400 hover:bg-cyan-500/10 transition-all">
