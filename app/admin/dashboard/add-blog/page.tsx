@@ -27,7 +27,7 @@ export default function AddBlogPage() {
     setLoading(true);
     setMessage("");
 
-    const { error } = await supabase.from("blogs").insert([
+    const { error } = await supabase.from("blog").insert([
       {
         title: formData.title,
         content: formData.content,

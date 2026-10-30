@@ -79,7 +79,7 @@ export default function Home() {
               transition={{ duration: 1.5, repeat: Infinity }}
               className="w-2 h-2 bg-purple-400 rounded-full shadow-[0_0_10px_purple]"
             />
-            <p className="text-sm text-purple-300 font-medium">Blogs, Books & More</p>
+            <p className="text-sm text-purple-300 font-medium">blog, Books & More</p>
           </motion.div>
 
           <motion.h1
@@ -119,10 +119,10 @@ export default function Home() {
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
               <Link
-                href="/Blogs"
+                href="/blog"
                 className="block px-8 py-4 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full font-semibold text-white shadow-lg shadow-pink-500/50 hover:shadow-pink-500/80 transition-all duration-300"
               >
-                    ✍️ Read Blogs
+                    ✍️ Read blog
               </Link>
             </motion.div>
 

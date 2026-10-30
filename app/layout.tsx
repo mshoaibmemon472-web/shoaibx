@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "SHOAIBX | Premium Books, Blogs & Products",
+    default: "SHOAIBX | Premium Books, blog & Products",
     template: "%s | SHOAIBX"
   },
   description: "Discover premium AI education books, storybooks, and trending e-commerce products. Learn, build, and grow with SHOAIBX by M. Shoaib Memon.",

@@ -23,9 +23,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  // Fetch Dynamic Blogs
-  const { data: blogs } = await supabase.from("blogs").select("id, created_at");
-  const blogRoutes = (blogs || []).map((blog) => ({
+  // Fetch Dynamic blog
+  const { data: blog } = await supabase.from("blog").select("id, created_at");
+  const blogRoutes = (blog || []).map((blog) => ({
     url: `${baseUrl}/blog/${blog.id}`,
     lastModified: new Date(blog.created_at),
     changeFrequency: "monthly" as const,

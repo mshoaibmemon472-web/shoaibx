@@ -23,7 +23,7 @@ export default function SingleBlogPage() {
   useEffect(() => {
     const fetchBlog = async () => {
       const { data, error } = await supabase
-        .from("blogs")
+        .from("blog")
         .select("*")
         .eq("id", params.id)
         .single();
@@ -64,7 +64,7 @@ export default function SingleBlogPage() {
 
       <article className="max-w-3xl mx-auto px-6 -mt-20 relative z-10">
         <Link href="/blog" className="text-sm text-purple-400 hover:text-purple-300 font-semibold mb-6 inline-block">
-          ← Back to Blogs
+          ← Back to blog
         </Link>
         
         <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white drop-shadow-lg">
