@@ -81,6 +81,14 @@ export default function RootLayout({
       __html: `(function(s){s.dataset.zone='12111547',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`
     }}
   />
+
+  {/* Monetag Push Notification Ad (Golden Tag) */}
+<Script 
+  id="monetag-push-notification" 
+  src="https://5gvci.com/act/files/tag.min.js?z=12151851"
+  data-cfasync="false" 
+  strategy="afterInteractive"
+/>
   
 
       </body>
