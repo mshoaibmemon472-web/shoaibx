@@ -2,7 +2,7 @@ import { supabase } from "@/lib/supabase";
 import type { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://nexora-digital-8359.vercel.app";
+  const baseUrl = "https://shoaibx.vercel.app";
 
   // Static Pages
   const staticRoutes: MetadataRoute.Sitemap = [

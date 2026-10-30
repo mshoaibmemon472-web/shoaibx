@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SHOAIBX | Premium Books & Products",
     description: "Discover premium AI education, storybooks, and trending products.",
-    url: "https://nexora-digital-8359.vercel.app",
+    url: "https://shoaibx.vercel.app",
     siteName: "SHOAIBX",
     type: "website",
   },
