@@ -21,10 +21,9 @@ type Product = {
 const FILTERS = [
   "All",
   "New Arrivals",
-  "Digitals",
-  "Shop All Things Beauty",
-  "Shop Kitchen Must Have",
-  "Home Accessories",
+  "Men's Watches",
+  "Women's Watches",
+  "Smart Watches",
 ];
 
 export default function ProductsPage() {
@@ -42,7 +41,7 @@ export default function ProductsPage() {
       const { data, error } = await supabase
         .from("products")
         .select("*")
-        .eq("category", "My Products")
+        .eq("category", "My Products") // Yahan category "My Products" rakhein (jaisa admin panel mein hai)
         .order("created_at", { ascending: false });
 
       if (!error) {
@@ -58,7 +57,6 @@ export default function ProductsPage() {
   useEffect(() => {
     let result = products;
 
-    // Filter
     if (activeFilter === "New Arrivals") {
       const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
       result = result.filter(
@@ -68,7 +66,6 @@ export default function ProductsPage() {
       result = result.filter((p) => p.subcategory === activeFilter);
     }
 
-    // Search
     const q = search.toLowerCase().trim();
     if (q) {
       result = result.filter(
@@ -95,41 +92,38 @@ export default function ProductsPage() {
   };
 
   return (
-    <main className="min-h-screen text-gray-900 pt-32 pb-20 px-6 relative bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/shop-bg.jpg')" }}>
-  
-  {/* Background Overlay */}
-  <div className="absolute inset-0 bg-white/50 backdrop-blur-[1px]"></div>
+    <main className="min-h-screen bg-[#050505] text-white pt-32 pb-24 px-6 relative overflow-hidden">
+      
+      {/* Premium Background Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-900/10 blur-[150px] rounded-full pointer-events-none"></div>
 
-  <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto">
         
         {/* Header */}
-<div className="text-center mb-10">
-  <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 tracking-tight">
-    Shop Products
-  </h1>
-  <p className="text-gray-600 text-lg mb-2">Discover our premium collection</p>
-  <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
-    Handpicked trending products from Amazon. Worldwide shipping available. Click "Buy on Amazon" to view details and purchase safely.
-  </p>
-</div>
+        <div className="text-center mb-16">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-4 tracking-tight">
+            <span className="bg-gradient-to-r from-amber-200 via-yellow-400 to-amber-200 bg-clip-text text-transparent">
+              Premium Watches
+            </span>
+          </h1>
+          <p className="text-gray-400 text-lg md:text-xl tracking-widest uppercase">Timeless Elegance by ShoaibX</p>
+        </div>
 
         {/* Search Bar */}
-        <div className="max-w-2xl mx-auto mb-8">
+        <div className="max-w-2xl mx-auto mb-12">
           <div className="relative">
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg">
-              🔍
-            </span>
+            <span className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-500 text-lg">🔍</span>
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search products..."
-              className="w-full pl-12 pr-4 py-4 bg-white border border-gray-200 rounded-full text-gray-900 placeholder-gray-400 focus:border-black focus:ring-1 focus:ring-black focus:outline-none transition-all shadow-sm"
+              placeholder="Search your style..."
+              className="w-full pl-12 pr-4 py-4 bg-white/5 border border-white/10 rounded-full text-white placeholder-gray-500 focus:border-amber-500/50 focus:outline-none backdrop-blur-md transition-colors"
             />
             {search && (
               <button
                 onClick={() => setSearch("")}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-black transition-colors"
+                className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-500 hover:text-amber-400 transition-colors"
               >
                 ✕
               </button>
@@ -138,15 +132,15 @@ export default function ProductsPage() {
         </div>
 
         {/* Filters */}
-        <div className="flex justify-center gap-2 md:gap-3 mb-10 flex-wrap">
+        <div className="flex justify-center gap-3 mb-16 flex-wrap">
           {FILTERS.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveFilter(cat)}
-              className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-sm ${
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all border ${
                 activeFilter === cat
-                  ? "bg-gray-900 text-white"
-                  : "bg-white text-gray-600 border border-gray-200 hover:border-gray-400"
+                  ? "bg-gradient-to-r from-amber-600 to-yellow-600 text-black border-transparent shadow-[0_0_15px_rgba(245,158,11,0.4)]"
+                  : "bg-transparent text-gray-400 border-white/10 hover:border-amber-500/50 hover:text-amber-300"
               }`}
             >
               {cat}
@@ -155,7 +149,7 @@ export default function ProductsPage() {
         </div>
 
         {search && (
-          <p className="text-center text-gray-500 text-sm mb-6">
+          <p className="text-center text-gray-500 text-sm mb-8">
             {filtered.length} result{filtered.length !== 1 ? "s" : ""} found
           </p>
         )}
@@ -163,16 +157,14 @@ export default function ProductsPage() {
         {/* Products Grid */}
         {loading ? (
           <div className="flex justify-center py-20">
-             <div className="w-10 h-10 border-4 border-gray-200 border-t-black rounded-full animate-spin"></div>
+             <div className="w-12 h-12 border-4 border-gray-800 border-t-amber-500 rounded-full animate-spin"></div>
           </div>
         ) : filtered.length === 0 ? (
           <p className="text-gray-500 text-center py-20 text-lg">
-            {search
-              ? "No products found for your search."
-              : "No products in this category yet."}
+            {search ? "No watches found for your search." : "New collection dropping soon."}
           </p>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 items-start">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 items-start">
             {filtered.map((product) => {
               const isExpanded = expandedIds.includes(product.id);
               const desc = product.description || "";
@@ -183,11 +175,11 @@ export default function ProductsPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   key={product.id}
-                  className="group relative bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+                  className="group relative bg-[#0a0a0a] rounded-2xl overflow-hidden border border-white/5 hover:border-amber-500/40 shadow-xl hover:shadow-[0_0_25px_rgba(245,158,11,0.15)] transition-all duration-500 flex flex-col h-full"
                 >
                   {/* NEW Badge */}
                   {isNew(product.created_at) && (
-                    <div className="absolute top-3 left-3 z-30 px-3 py-1 bg-black text-white rounded-full text-[10px] font-bold tracking-wider uppercase shadow-md">
+                    <div className="absolute top-4 left-4 z-30 px-3 py-1 bg-amber-500 text-black rounded-sm text-[10px] font-bold tracking-widest uppercase shadow-lg">
                       New
                     </div>
                   )}
@@ -198,24 +190,24 @@ export default function ProductsPage() {
                       setLightboxProduct(product);
                       setLightboxOpen(true);
                     }}
-                    className="cursor-zoom-in relative bg-gray-50 p-4"
+                    className="cursor-zoom-in relative bg-[#111] p-4"
                   >
-                    <div className="aspect-square rounded-xl overflow-hidden bg-white">
+                    <div className="aspect-[4/5] rounded-xl overflow-hidden bg-black">
                       <ImageCarousel
                         images={product.image_urls || []}
-                        fallback={product.cover_image_url || "🛍️"}
+                        fallback={product.cover_image_url || "⌚"}
                         alt={product.title}
-                        aspectClass="aspect-square"
+                        aspectClass="aspect-[4/5]"
                       />
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="p-4 flex flex-col flex-1">
-                    <p className="text-[10px] uppercase tracking-wider text-gray-500 font-bold mb-1">
-                      {product.subcategory || "Shop All"}
+                  <div className="p-6 flex flex-col flex-1">
+                    <p className="text-[10px] uppercase tracking-widest text-amber-500/80 font-bold mb-2">
+                      {product.subcategory || "Luxury"}
                     </p>
-                    <h3 className="text-sm md:text-base font-bold text-gray-900 mb-2 leading-snug">
+                    <h3 className="text-lg font-bold text-white mb-2 leading-snug">
                       {product.title}
                     </h3>
 
@@ -227,7 +219,7 @@ export default function ProductsPage() {
                       {isLong && (
                         <button
                           onClick={() => toggleExpanded(product.id)}
-                          className="text-[11px] text-black hover:underline font-semibold mt-1 transition-colors"
+                          className="text-[11px] text-amber-500 hover:text-amber-400 font-semibold mt-1 transition-colors"
                         >
                           {isExpanded ? "See Less" : "See More"}
                         </button>
@@ -235,20 +227,21 @@ export default function ProductsPage() {
                     </div>
 
                     {/* Price */}
-                    <div className="flex items-center justify-between gap-2 mb-3 mt-auto">
-                      <span className="text-lg md:text-xl font-extrabold text-gray-900">
-                        {product.price || "Free"}
+                    <div className="flex items-center justify-between gap-2 mb-4 mt-auto border-t border-white/5 pt-4">
+                      <span className="text-xl font-extrabold text-amber-400">
+                        {product.price || "Rs. 0"}
                       </span>
                     </div>
 
-                    {/* Buy Button */}
+                    {/* WhatsApp Order Button */}
                     <a
-                      href={product.gumroad_url || "#"}
+                      href={`https://wa.me/923142325733?text=${encodeURIComponent(`Hi ShoaibX! I want to order this watch: ${product.title} (Price: ${product.price}). Please guide me.`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full text-center px-4 py-2.5 bg-gray-900 hover:bg-black text-white rounded-xl text-sm font-bold transition-all hover:scale-[1.02] active:scale-95 shadow-md"
+                      className="w-full text-center px-4 py-3 bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-500 hover:to-yellow-500 text-black rounded-lg text-sm font-bold transition-all hover:scale-[1.02] active:scale-95 shadow-lg flex items-center justify-center gap-2"
                     >
-                      🛒 Buy on Amazon
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                      Order on WhatsApp
                     </a>
                   </div>
                 </motion.div>
