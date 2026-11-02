@@ -9,16 +9,17 @@ function HeroBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
       
-      {/* 1. Big Animated Logo Background (Like Smoke Effect) */}
+      {/* 1. Big Animated Logo Background */}
       <motion.div
-        className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-40 mix-blend-screen"
+        className="absolute inset-0 bg-contain bg-center bg-no-repeat mix-blend-screen"
         style={{
           backgroundImage: "url('/sx-logo.png')",
-          backgroundSize: "65%", // Logo ka size (screen ke hisaab se)
+          backgroundSize: "60%", // Size adjust kiya hai taaki screen par fit aaye
+          opacity: 0.5, // Opacity badha di hai taaki saaf dikhe
         }}
         animate={{
-          scale: [1, 1.05, 1], // Saans lene jaisa (breathing) effect
-          rotate: [0, 2, -2, 0], // Halka sa move hona
+          scale: [1, 1.05, 1], // Breathing effect
+          rotate: [0, 1, -1, 0], // Halka sa move
         }}
         transition={{
           duration: 15,
@@ -27,10 +28,10 @@ function HeroBackground() {
         }}
       />
 
-      {/* 2. Dark Maroon Overlay (Taaki text saaf padha jaye) */}
-      <div className="absolute inset-0 bg-[#0a0303]/60 mix-blend-multiply" />
+      {/* 2. Dark Maroon Overlay */}
+      <div className="absolute inset-0 bg-[#0a0303]/70 mix-blend-multiply" />
 
-      {/* 3. Gradient Overlay (Neeche se upar) */}
+      {/* 3. Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0303] via-transparent to-transparent" />
 
       {/* 4. Maroon Spotlight Beam */}
@@ -83,7 +84,7 @@ export default function Home() {
             <p className="text-sm text-gray-300 font-medium tracking-widest uppercase">Luxury Watches & Tech</p>
           </motion.div>
 
-          {/* Main Heading (Serif Font for Luxury) */}
+          {/* Main Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30, filter: "blur(12px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -157,7 +158,6 @@ export default function Home() {
               href="/products"
               className="group relative flex flex-col items-center justify-center w-full h-56 md:h-64 rounded-xl overflow-hidden border border-[#4a0e0e] hover:border-[#a33a3a] transition-all duration-500 shadow-2xl"
             >
-              {/* Yahan bhi background mein logo hai */}
               <div className="absolute inset-0 bg-[url('/sx-logo.png')] bg-center bg-no-repeat bg-contain opacity-10 group-hover:scale-110 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-r from-[#0a0303]/95 via-[#4a0e0e]/80 to-[#0a0303]/95 opacity-90" />
               
