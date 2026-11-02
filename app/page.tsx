@@ -11,15 +11,16 @@ function HeroBackground() {
       
       {/* 1. Big Animated Logo Background */}
       <motion.div
-        className="absolute inset-0 bg-contain bg-center bg-no-repeat mix-blend-screen"
+        className="absolute inset-0 bg-contain bg-no-repeat mix-blend-screen"
         style={{
           backgroundImage: "url('/sx-logo.png')",
-          backgroundSize: "60%", // Size adjust kiya hai taaki screen par fit aaye
-          opacity: 0.5, // Opacity badha di hai taaki saaf dikhe
+          backgroundSize: "65%", 
+          backgroundPosition: "center 30%", // Logo upar shift ho gaya
+          opacity: 0.85, 
         }}
         animate={{
-          scale: [1, 1.05, 1], // Breathing effect
-          rotate: [0, 1, -1, 0], // Halka sa move
+          scale: [1, 1.05, 1], 
+          rotate: [0, 1, -1, 0], 
         }}
         transition={{
           duration: 15,
@@ -28,11 +29,11 @@ function HeroBackground() {
         }}
       />
 
-      {/* 2. Dark Maroon Overlay */}
-      <div className="absolute inset-0 bg-[#0a0303]/70 mix-blend-multiply" />
+      {/* 2. Halka Dark Overlay */}
+      <div className="absolute inset-0 bg-[#0a0303]/30" />
 
-      {/* 3. Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0303] via-transparent to-transparent" />
+      {/* 3. Gradient Overlay (Neeche se upar) */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0303] via-[#0a0303]/60 to-transparent" />
 
       {/* 4. Maroon Spotlight Beam */}
       <motion.div
@@ -67,7 +68,8 @@ export default function Home() {
         
         <HeroBackground />
 
-        <div className="relative z-20 max-w-4xl mx-auto mt-10 flex flex-col items-center">
+        {/* Text ko neeche shift kiya hai (mt-32) */}
+        <div className="relative z-20 max-w-4xl mx-auto mt-32 flex flex-col items-center">
           
           {/* Badge */}
           <motion.div
@@ -84,14 +86,14 @@ export default function Home() {
             <p className="text-sm text-gray-300 font-medium tracking-widest uppercase">Luxury Watches & Tech</p>
           </motion.div>
 
-          {/* Main Heading */}
+          {/* Main Heading (Metallic Silver Effect) */}
           <motion.h1
             initial={{ opacity: 0, y: 30, filter: "blur(12px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.9, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
-            className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold mb-4 tracking-tight drop-shadow-2xl"
+            className="text-6xl md:text-8xl lg:text-9xl font-sans font-black mb-4 tracking-tighter drop-shadow-[0_10px_10px_rgba(0,0,0,0.8)]"
           >
-            <span className="bg-gradient-to-r from-gray-200 via-white to-gray-400 bg-clip-text text-transparent">
+            <span className="relative text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-300 to-gray-600">
               SX FLEX
             </span>
           </motion.h1>
