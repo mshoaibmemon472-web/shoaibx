@@ -4,36 +4,36 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-// ===== Luxury Maroon Logo Background =====
+// ===== Hero Background With Animated Logo =====
 function HeroBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
       
-      {/* 1. Huge Faded Logo in Background */}
+      {/* 1. Big Animated Logo Background (Like Smoke Effect) */}
       <motion.div
-        className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-[0.07] mix-blend-screen"
+        className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-40 mix-blend-screen"
         style={{
           backgroundImage: "url('/sx-logo.png')",
-          backgroundSize: "60%", // Logo ko screen ke hisaab se adjust karega
+          backgroundSize: "65%", // Logo ka size (screen ke hisaab se)
         }}
         animate={{
-          scale: [1, 1.05, 1],
-          rotate: [0, 1, -1, 0] // Bohot halka sa rotate hone ka effect
+          scale: [1, 1.05, 1], // Saans lene jaisa (breathing) effect
+          rotate: [0, 2, -2, 0], // Halka sa move hona
         }}
         transition={{
-          duration: 25,
+          duration: 15,
           repeat: Infinity,
           ease: "easeInOut",
         }}
       />
 
-      {/* 2. Maroon Color Overlay (Gehra Laal) */}
-      <div className="absolute inset-0 bg-[#4a0e0e]/30 mix-blend-color" />
+      {/* 2. Dark Maroon Overlay (Taaki text saaf padha jaye) */}
+      <div className="absolute inset-0 bg-[#0a0303]/60 mix-blend-multiply" />
 
-      {/* 3. Dark Overlay (Taaki Text Saaf Padha Jaye) */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0303] via-[#0a0303]/90 to-transparent" />
+      {/* 3. Gradient Overlay (Neeche se upar) */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0303] via-transparent to-transparent" />
 
-      {/* 4. Maroon Spotlight Beam from Top Right */}
+      {/* 4. Maroon Spotlight Beam */}
       <motion.div
         className="absolute -top-20 right-10 w-[300px] md:w-[500px] h-[800px] origin-top"
         style={{
@@ -50,7 +50,7 @@ function HeroBackground() {
       <div 
         className="absolute bottom-0 left-0 right-0 h-[300px]"
         style={{
-          background: "radial-gradient(ellipse at bottom, rgba(163,58,58,0.2) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse at bottom, rgba(163,58,58,0.25) 0%, transparent 70%)",
         }}
       />
     </div>
@@ -68,27 +68,12 @@ export default function Home() {
 
         <div className="relative z-20 max-w-4xl mx-auto mt-10 flex flex-col items-center">
           
-          {/* Actual Logo in Hero Section */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-32 h-32 md:w-40 md:h-40 relative mb-8 rounded-full overflow-hidden border border-[#a33a3a]/30 shadow-[0_0_40px_rgba(163,58,58,0.3)] bg-[#0a0303]"
-          >
-            <Image 
-              src="/sx-logo.png" 
-              alt="SX Flex Logo" 
-              fill
-              className="object-cover"
-            />
-          </motion.div>
-
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-6 px-5 py-2 border border-[#a33a3a]/50 rounded-full bg-[#4a0e0e]/30 backdrop-blur-md inline-flex items-center gap-2"
+            className="mb-8 px-5 py-2 border border-[#a33a3a]/50 rounded-full bg-[#4a0e0e]/30 backdrop-blur-md inline-flex items-center gap-2 shadow-[0_0_15px_rgba(163,58,58,0.2)]"
           >
             <motion.span
               animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
@@ -98,7 +83,7 @@ export default function Home() {
             <p className="text-sm text-gray-300 font-medium tracking-widest uppercase">Luxury Watches & Tech</p>
           </motion.div>
 
-          {/* Main Heading */}
+          {/* Main Heading (Serif Font for Luxury) */}
           <motion.h1
             initial={{ opacity: 0, y: 30, filter: "blur(12px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -172,7 +157,7 @@ export default function Home() {
               href="/products"
               className="group relative flex flex-col items-center justify-center w-full h-56 md:h-64 rounded-xl overflow-hidden border border-[#4a0e0e] hover:border-[#a33a3a] transition-all duration-500 shadow-2xl"
             >
-              {/* Yahan humne smoke ki jagah aapka logo background mein rakha hai */}
+              {/* Yahan bhi background mein logo hai */}
               <div className="absolute inset-0 bg-[url('/sx-logo.png')] bg-center bg-no-repeat bg-contain opacity-10 group-hover:scale-110 transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-r from-[#0a0303]/95 via-[#4a0e0e]/80 to-[#0a0303]/95 opacity-90" />
               
