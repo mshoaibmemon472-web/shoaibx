@@ -19,26 +19,21 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "SHOAIBX | Premium Books, blog & Products",
-    template: "%s | SHOAIBX"
+    default: "ShoaibX | Premium Books, Blogs & Products",
+    template: "%s | ShoaibX"
   },
-  description: "Discover premium AI education books, storybooks, and trending e-commerce products. Learn, build, and grow with SHOAIBX by M. Shoaib Memon.",
-  keywords: ["SHOAIBX", "AI books", "story books", "e-commerce", "Amazon products", "M Shoaib Memon", "AI prompts"],
-  authors: [{ name: "M. Shoaib Memon" }],
-  
+  description: "Discover premium AI education books, storybooks, and trending e-commerce products.",
   verification: {
-  google: "a31dzuemgTuHF6GDpr8TlDwqxjlUH_0tMJyuo98czbk"
-},
-
+    google: "a31dzwemgTuHF6GDpr8TlDmprj1W_otmDyoO8c8zMkc",
+  },
   openGraph: {
-    title: "SHOAIBX | Premium Books & Products",
+    title: "ShoaibX | Premium Books & Products",
     description: "Discover premium AI education, storybooks, and trending products.",
     url: "https://shoaibx.vercel.app",
-    siteName: "SHOAIBX",
+    siteName: "ShoaibX",
     type: "website",
   },
 };
-
 
 export default function RootLayout({
   children,
@@ -46,51 +41,43 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable} min-h-full flex flex-col antialiased`}>
+        
         <Navbar />
-        {children}
+        
+        <main className="flex-grow">
+          {children}
+        </main>
+
         <Footer />
+
         <Analytics />
-<GoogleAnalytics gaId="G-0CGZ4FHCLN" />
-{/* Monetag In-Page Push Ad */}
-<Script 
-  id="monetag-in-page-push" 
-  strategy="afterInteractive"
-  dangerouslySetInnerHTML={{
-    __html: `(function(s){s.dataset.zone='12111516',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`
-  }}
-/>
-{/* Monetag In-Page Push Ad */}
-  <Script 
-    id="monetag-in-page-push" 
-    strategy="afterInteractive"
-    dangerouslySetInnerHTML={{
-      __html: `(function(s){s.dataset.zone='12111516',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`
-    }}
-  />
+        <GoogleAnalytics gaId="G-0CGZ4FHCLN" />
+        
+        <Script 
+          id="monetag-in-page-push" 
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(s){s.dataset.zone='12111516',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`
+          }}
+        />
 
-  {/* Monetag Vignette Banner Ad (Naya Add) */}
-  <Script 
-    id="monetag-vignette" 
-    strategy="afterInteractive"
-    dangerouslySetInnerHTML={{
-      __html: `(function(s){s.dataset.zone='12111547',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`
-    }}
-  />
+        <Script 
+          id="monetag-vignette" 
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(s){s.dataset.zone='12111547',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`
+          }}
+        />
 
-  {/* Monetag Push Notification Ad (Golden Tag) */}
-<Script 
-  id="monetag-push-notification" 
-  src="https://5gvci.com/act/files/tag.min.js?z=12151851"
-  data-cfasync="false" 
-  strategy="afterInteractive"
-/>
-  
-
+        <Script 
+          id="monetag-push-notification" 
+          src="https://5gvci.com/act/files/tag.min.js?z=12151851"
+          data-cfasync="false" 
+          strategy="afterInteractive"
+        />
+        
       </body>
     </html>
   );
